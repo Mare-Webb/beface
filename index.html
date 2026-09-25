@@ -81,7 +81,7 @@
   .hours-mini b { color: var(--cocoa); font-weight: 600; }
   .arch-frame { position: relative; justify-self: center; width: min(420px, 100%); }
   .arch-frame .arch-img { border-radius: var(--arch); overflow: hidden; aspect-ratio: 3 / 4.4; background: var(--nude-2); }
-  .arch-frame .arch-img img { width: 100%; height: 100%; object-fit: cover; }
+  .arch-frame .arch-img video { width: 100%; height: 100%; object-fit: cover; display: block; }
   .arch-frame::before {
     content: ""; position: absolute; inset: -16px; border: 1px solid var(--copper-light);
     border-radius: 999px 999px 26px 26px; pointer-events: none;
@@ -264,7 +264,7 @@
         <div class="hours-mini"><span><b>Seg a sex</b> 8h às 20h</span><span><b>Sábado</b> 9h às 13h</span></div>
       </div>
       <div class="arch-frame">
-        <div class="arch-img"><img src="assets/posts/DPmlAk6CVXH.jpg" alt="Recepção da clínica be.face"></div>
+        <div class="arch-img"><video id="welcome" src="assets/welcome.mp4" poster="assets/welcome-poster.jpg" autoplay muted loop playsinline preload="auto" aria-label="Vídeo da recepção da clínica be.face"></video></div>
         <div class="badge"><b>7 anos</b>de história em Navegantes</div>
       </div>
     </div>
@@ -361,6 +361,10 @@
   // Where "Agendar" buttons lead. Swap for the clinic's WhatsApp (https://wa.me/55...) when available.
   const BOOK_URL = "https://ig.me/m/befacenavegantes";
   document.querySelectorAll("[data-book]").forEach(a => { a.href = BOOK_URL; });
+
+  // Welcome video loops silently; keep it still for people who prefer reduced motion
+  const welcome = document.getElementById("welcome");
+  if (matchMedia("(prefers-reduced-motion: reduce)").matches) { welcome.removeAttribute("autoplay"); welcome.pause(); }
 
   // Hide the anniversary invite once the event day is over
   const ev = document.getElementById("evento");
