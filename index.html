@@ -1,0 +1,466 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>be.face + be.laser · Clínica Estética Navegantes</title>
+<meta name="description" content="Clínica estética em Navegantes SC. Procedimentos faciais e corporais, protocolos de emagrecimento e massagens. Agende sua avaliação gratuita.">
+<meta property="og:title" content="be.face + be.laser · Clínica Estética">
+<meta property="og:description" content="Realce sua beleza, sinta sua essência. Agende sua avaliação gratuita.">
+<meta property="og:image" content="assets/posts/DdrN38aOd_h.jpg">
+<meta name="theme-color" content="#F4E9E2">
+<link rel="icon" href="assets/profile.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..700;1,6..96,400..600&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --nude: #F4E9E2;
+    --nude-2: #EADBD1;
+    --shell: #FBF6F2;
+    --copper: #A8623F;
+    --copper-deep: #83482C;
+    --copper-light: #D7A184;
+    --cocoa: #3A2620;
+    --cocoa-soft: #6F574D;
+    --sage: #9FA793;
+    --sage-deep: #5F6955;
+    --gutter: clamp(16px, 5vw, 64px);
+    --serif: "Bodoni Moda", "Didot", "Bodoni 72", Georgia, serif;
+    --sans: "Manrope", system-ui, -apple-system, "Segoe UI", sans-serif;
+    --arch: 999px 999px 18px 18px;
+  }
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    margin: 0; font-family: var(--sans); font-size: 1.0625rem; line-height: 1.6;
+    color: var(--cocoa); background: var(--nude); -webkit-font-smoothing: antialiased;
+  }
+  img { max-width: 100%; display: block; }
+  a { color: inherit; }
+  :focus-visible { outline: 2px solid var(--copper); outline-offset: 3px; border-radius: 6px; }
+  .wrap { padding-inline: var(--gutter); max-width: 1280px; margin-inline: auto; }
+  h1, h2, h3 { font-family: var(--serif); font-weight: 500; line-height: 1.05; letter-spacing: -.01em; }
+
+  .btn {
+    display: inline-flex; align-items: center; gap: .6em;
+    font: 600 1rem/1 var(--sans); padding: 1.05em 1.6em; border-radius: 999px;
+    text-decoration: none; border: 1.5px solid transparent; cursor: pointer;
+    transition: background-color .2s ease, color .2s ease, border-color .2s ease;
+  }
+  .btn svg { width: 1.2em; height: 1.2em; flex: none; }
+  .btn-copper { background: var(--copper); color: var(--shell); }
+  .btn-copper:hover { background: var(--copper-deep); }
+  .btn-line { border-color: var(--cocoa); color: var(--cocoa); }
+  .btn-line:hover { background: var(--cocoa); color: var(--shell); }
+  .btn-shell { background: var(--shell); color: var(--copper-deep); }
+  .btn-shell:hover { background: var(--nude); }
+
+  /* Header */
+  .top { padding-top: env(safe-area-inset-top, 0px); }
+  .top .wrap { display: flex; align-items: center; justify-content: space-between; gap: 16px; padding-block: 18px; }
+  .brand { display: flex; align-items: center; gap: 12px; text-decoration: none; }
+  .brand img { width: 46px; height: 46px; border-radius: 50%; }
+  .brand span { font: 500 1.35rem/1 var(--serif); }
+  .brand small { display: block; font: 600 .72rem/1 var(--sans); color: var(--cocoa-soft); margin-top: 4px; letter-spacing: .02em; }
+  .top nav { display: flex; gap: 28px; align-items: center; }
+  .top nav a:not(.btn) { text-decoration: none; font-weight: 500; color: var(--cocoa-soft); }
+  .top nav a:not(.btn):hover { color: var(--copper); }
+  .top .btn { padding: .8em 1.2em; font-size: .92rem; }
+
+  /* Hero */
+  .hero .wrap {
+    display: grid; grid-template-columns: 1.15fr .85fr; gap: clamp(28px, 5vw, 72px); align-items: center;
+    padding-block: clamp(24px, 4vw, 48px) clamp(56px, 8vw, 104px);
+  }
+  .hero h1 { margin: 0; font-size: clamp(3rem, 7.4vw, 6.4rem); line-height: .98; }
+  .hero h1 span { display: block; font-style: italic; color: var(--copper); padding-left: .9em; }
+  .hero p { max-width: 42ch; font-size: clamp(1.08rem, 1.4vw, 1.22rem); color: var(--cocoa-soft); margin: 28px 0 30px; }
+  .ctas { display: flex; flex-wrap: wrap; gap: 12px; }
+  .hours-mini { margin: 30px 0 0; display: flex; flex-wrap: wrap; gap: 8px 24px; font-size: .95rem; color: var(--cocoa-soft); }
+  .hours-mini b { color: var(--cocoa); font-weight: 600; }
+  .arch-frame { position: relative; justify-self: center; width: min(420px, 100%); }
+  .arch-frame .arch-img { border-radius: var(--arch); overflow: hidden; aspect-ratio: 3 / 4.4; background: var(--nude-2); }
+  .arch-frame .arch-img img { width: 100%; height: 100%; object-fit: cover; }
+  .arch-frame::before {
+    content: ""; position: absolute; inset: -16px; border: 1px solid var(--copper-light);
+    border-radius: 999px 999px 26px 26px; pointer-events: none;
+  }
+  .arch-frame .badge {
+    position: absolute; left: -22px; bottom: -22px; background: var(--sage); color: var(--shell);
+    padding: 14px 18px; border-radius: 16px; font-weight: 600; font-size: .95rem; line-height: 1.3; max-width: 190px;
+  }
+  .arch-frame .badge b { display: block; font: 500 1.5rem/1.05 var(--serif); }
+
+  /* Event */
+  .event { background: var(--copper); color: var(--shell); }
+  .event .wrap { display: grid; grid-template-columns: auto 1fr auto; gap: clamp(20px, 3vw, 44px); align-items: center; padding-block: clamp(28px, 4vw, 44px); }
+  .event img { width: 128px; aspect-ratio: 3 / 4; object-fit: cover; object-position: 50% 30%; border-radius: 999px 999px 12px 12px; border: 3px solid var(--shell); }
+  .event h2 { margin: 0 0 8px; font-size: clamp(1.8rem, 3.6vw, 2.8rem); }
+  .event p { margin: 0; max-width: 58ch; }
+  .event .when { text-align: center; font-weight: 600; line-height: 1.3; }
+  .event .when b { display: block; font: 500 2.8rem/1 var(--serif); }
+
+  /* Sections */
+  .sec { padding-block: clamp(64px, 9vw, 112px); }
+  .sec-head { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: end; gap: 16px 32px; margin-bottom: 40px; }
+  .sec-head h2 { margin: 0; font-size: clamp(2.6rem, 5.5vw, 4.4rem); }
+  .sec-head p { margin: 12px 0 0; max-width: 52ch; color: var(--cocoa-soft); }
+
+  .treat { background: var(--shell); }
+  .treat-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; }
+  .t-card { padding: 28px 24px 30px; border-radius: 24px; background: var(--nude); display: flex; flex-direction: column; gap: 12px; }
+  .t-card:nth-child(2) { background: #E7EAE1; }
+  .t-card:nth-child(4) { background: #E7EAE1; }
+  .t-card h3 { margin: 0; font-size: 1.8rem; }
+  .t-card ul { margin: 0; padding: 0; list-style: none; display: grid; gap: 8px; }
+  .t-card li { padding-left: 18px; position: relative; color: var(--cocoa-soft); line-height: 1.4; }
+  .t-card li::before { content: ""; position: absolute; left: 0; top: .55em; width: 7px; height: 7px; border-radius: 50%; background: var(--copper-light); }
+  .treat-note { margin: 28px 0 0; color: var(--cocoa-soft); font-size: .95rem; max-width: 70ch; }
+
+  /* Carousel */
+  .reel-controls { display: flex; gap: 10px; }
+  .round {
+    width: 52px; height: 52px; border-radius: 50%; border: 1.5px solid var(--cocoa); background: transparent; color: var(--cocoa);
+    cursor: pointer; display: grid; place-items: center; transition: background-color .2s ease, color .2s ease;
+  }
+  .round:hover { background: var(--cocoa); color: var(--shell); }
+  .round svg { width: 20px; height: 20px; }
+  .reel { display: flex; gap: 22px; overflow-x: auto; scrollbar-width: none; padding: 6px var(--gutter) 24px; cursor: grab; }
+  .reel::-webkit-scrollbar { display: none; }
+  .reel.dragging { cursor: grabbing; }
+  .reel.dragging .card { pointer-events: none; }
+  .card {
+    flex: 0 0 clamp(230px, 24vw, 280px); background: transparent; border: 0; padding: 0; text-align: left;
+    font: inherit; color: inherit; cursor: pointer; display: flex; flex-direction: column; gap: 14px; user-select: none;
+  }
+  .card-media { position: relative; aspect-ratio: 4 / 5; border-radius: 999px 999px 18px 18px; overflow: hidden; background: var(--nude-2); }
+  .card-media img { width: 100%; height: 100%; object-fit: cover; transition: transform .5s ease; -webkit-user-drag: none; }
+  .card:hover .card-media img, .card:focus-visible .card-media img { transform: scale(1.04); }
+  .kind {
+    position: absolute; bottom: 12px; left: 12px; display: inline-flex; align-items: center; gap: 6px;
+    background: rgba(251,246,242,.92); color: var(--cocoa); font-size: .78rem; font-weight: 600;
+    padding: 6px 10px 6px 8px; border-radius: 999px;
+  }
+  .kind svg { width: 13px; height: 13px; }
+  .card-body { display: flex; flex-direction: column; gap: 6px; padding-inline: 4px; }
+  .card-body p {
+    margin: 0; font: 500 1.1rem/1.3 var(--serif);
+    display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden;
+  }
+  .card-body time { font-size: .82rem; color: var(--cocoa-soft); }
+
+  /* Visit */
+  .visit { background: var(--sage-deep); color: var(--shell); }
+  .visit .wrap { display: grid; grid-template-columns: 1fr 1.1fr; gap: clamp(28px, 5vw, 64px); align-items: stretch; }
+  .visit h2 { margin: 0 0 20px; font-size: clamp(2.4rem, 5vw, 4rem); }
+  .visit address { font-style: normal; font-size: 1.2rem; line-height: 1.45; margin-bottom: 26px; }
+  .visit table { border-collapse: collapse; margin-bottom: 30px; font-size: 1.05rem; }
+  .visit th { text-align: left; font-weight: 500; padding: 8px 32px 8px 0; opacity: .85; }
+  .visit td { padding: 8px 0; font-weight: 600; }
+  .visit tr + tr { border-top: 1px solid rgba(251,246,242,.25); }
+  .visit .btn-line { border-color: var(--shell); color: var(--shell); }
+  .visit .btn-line:hover { background: var(--shell); color: var(--sage-deep); }
+  .map { border-radius: 24px; overflow: hidden; min-height: 420px; background: var(--nude-2); }
+  .map iframe { width: 100%; height: 100%; min-height: 420px; border: 0; display: block; }
+
+  footer { background: var(--cocoa); color: var(--nude); padding-bottom: env(safe-area-inset-bottom, 0px); }
+  footer .wrap { display: flex; flex-wrap: wrap; gap: 16px 32px; justify-content: space-between; align-items: center; padding-block: 26px; }
+  footer p { margin: 0; font: italic 400 1.1rem/1.3 var(--serif); }
+  footer .brand small { color: var(--copper-light); }
+  footer .btn-line { border-color: var(--nude); color: var(--nude); }
+  footer .btn-line:hover { background: var(--nude); color: var(--cocoa); }
+
+  .book-float {
+    position: fixed; right: 18px; bottom: calc(18px + env(safe-area-inset-bottom, 0px)); z-index: 20;
+    display: inline-flex; align-items: center; gap: 8px; padding: 14px 18px; border-radius: 999px;
+    background: var(--copper); color: var(--shell); text-decoration: none; font-weight: 600; font-size: .95rem;
+    box-shadow: 0 12px 26px -10px rgba(58,38,32,.6);
+  }
+  .book-float svg { width: 20px; height: 20px; }
+
+  dialog {
+    border: 0; padding: 0; border-radius: 24px; width: min(880px, calc(100vw - 32px));
+    max-height: calc(100dvh - 32px); background: var(--shell); color: var(--cocoa); overflow: hidden;
+  }
+  dialog::backdrop { background: rgba(58, 38, 32, .7); backdrop-filter: blur(4px); }
+  dialog[open] { animation: pop .25s ease-out; }
+  @keyframes pop { from { opacity: 0; transform: translateY(10px); } }
+  .dlg { display: grid; grid-template-columns: minmax(0, 400px) 1fr; max-height: calc(100dvh - 32px); }
+  .dlg-embed { background: var(--nude); overflow: auto; }
+  .dlg-embed iframe { width: 100%; height: 640px; border: 0; display: block; }
+  .dlg-side { padding: 36px 28px 28px; display: flex; flex-direction: column; gap: 16px; overflow: auto; }
+  .dlg-caption { white-space: pre-line; margin: 0; }
+  .dlg-side .ctas { margin-top: auto; padding-top: 8px; }
+  .close {
+    position: absolute; top: 12px; right: 12px; z-index: 2; width: 44px; height: 44px; border-radius: 50%;
+    border: 0; background: var(--cocoa); color: var(--shell); cursor: pointer; display: grid; place-items: center;
+  }
+  .close svg { width: 20px; height: 20px; }
+  .sr-only { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+
+  @media (max-width: 1000px) {
+    .treat-grid { grid-template-columns: 1fr 1fr; }
+  }
+  @media (max-width: 900px) {
+    .hero .wrap, .visit .wrap { grid-template-columns: 1fr; }
+    .arch-frame { width: min(340px, 84%); margin-top: 24px; }
+    .top nav a:not(.btn) { display: none; }
+    .event .wrap { grid-template-columns: auto 1fr; }
+    .event .when { grid-column: 1 / -1; text-align: left; display: flex; gap: 10px; align-items: baseline; }
+    .event .when b { display: inline; font-size: 2rem; }
+    .dlg { grid-template-columns: 1fr; overflow: auto; }
+    .dlg-embed { overflow: visible; }
+    .dlg-embed iframe { height: 560px; }
+  }
+  @media (max-width: 560px) {
+    .top .btn { display: none; }
+    .treat-grid { grid-template-columns: 1fr; }
+    .event img { width: 84px; }
+    .arch-frame .badge { left: -8px; }
+    .card { flex-basis: 74vw; }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    dialog[open] { animation: none; }
+    .card-media img { transition: none; }
+  }
+</style>
+</head>
+<body>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="i-ig" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.8" d="M7 2h10a5 5 0 0 1 5 5v10a5 5 0 0 1-5 5H7a5 5 0 0 1-5-5V7a5 5 0 0 1 5-5Z"/><circle cx="12" cy="12" r="4.2" fill="none" stroke="currentColor" stroke-width="1.8"/><circle cx="17.6" cy="6.4" r="1.2" fill="currentColor"/></symbol>
+  <symbol id="i-cal" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" d="M4 6.5h16v13.5H4zM4 10.5h16M8.5 3.5v4M15.5 3.5v4"/></symbol>
+  <symbol id="i-play" viewBox="0 0 24 24"><path fill="currentColor" d="M7 4.5v15l13-7.5z"/></symbol>
+  <symbol id="i-photo" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2.2" d="M3 6h18v13H3z"/><circle cx="12" cy="12.5" r="3.4" fill="currentColor"/></symbol>
+  <symbol id="i-left" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" d="M15 5l-7 7 7 7"/></symbol>
+  <symbol id="i-right" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></symbol>
+  <symbol id="i-x" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" d="M6 6l12 12M18 6L6 18"/></symbol>
+</svg>
+
+<header class="top">
+  <div class="wrap">
+    <a class="brand" href="#inicio" aria-label="be.face, início"><img src="assets/profile.jpg" alt=""><span>be.face + be.laser<small>Clínica estética em Navegantes</small></span></a>
+    <nav aria-label="Principal">
+      <a href="#tratamentos">Tratamentos</a>
+      <a href="#resultados">Resultados</a>
+      <a href="#visite">Visite</a>
+      <a class="btn btn-copper" data-book target="_blank" rel="noopener"><svg><use href="#i-cal"/></svg>Agendar avaliação</a>
+    </nav>
+  </div>
+</header>
+
+<main id="inicio">
+  <section class="hero" aria-labelledby="hero-title">
+    <div class="wrap">
+      <div>
+        <h1 id="hero-title">Realce sua beleza, <span>sinta sua essência.</span></h1>
+        <p>Procedimentos faciais e corporais, protocolos de emagrecimento e massagens, com tecnologia, segurança e um atendimento pensado para você.</p>
+        <div class="ctas">
+          <a class="btn btn-copper" data-book target="_blank" rel="noopener"><svg><use href="#i-cal"/></svg>Agendar avaliação gratuita</a>
+          <a class="btn btn-line" href="#tratamentos">Ver tratamentos</a>
+        </div>
+        <div class="hours-mini"><span><b>Seg a sex</b> 8h às 20h</span><span><b>Sábado</b> 9h às 13h</span></div>
+      </div>
+      <div class="arch-frame">
+        <div class="arch-img"><img src="assets/posts/DPmlAk6CVXH.jpg" alt="Recepção da clínica be.face"></div>
+        <div class="badge"><b>7 anos</b>de história em Navegantes</div>
+      </div>
+    </div>
+  </section>
+
+  <section class="event" id="evento" aria-labelledby="event-title" data-until="2026-10-08">
+    <div class="wrap">
+      <img src="assets/posts/DdrN38aOd_h.jpg" alt="Convite especial be.face">
+      <div>
+        <h2 id="event-title">Um convite especial</h2>
+        <p>1 ano de be.face e 7 anos de história. Um dia inteiro de celebração na clínica, com degustação, coquetel, brindes e sorteios. Traga sua família!</p>
+      </div>
+      <div class="when"><b>08/10</b>das 10h às 22h</div>
+    </div>
+  </section>
+
+  <section class="sec treat" id="tratamentos" aria-labelledby="treat-title">
+    <div class="wrap">
+      <div class="sec-head"><div><h2 id="treat-title">Tratamentos</h2><p>Cada protocolo é definido na avaliação, de acordo com o seu objetivo e com o que o seu corpo precisa.</p></div></div>
+      <div class="treat-grid">
+        <article class="t-card"><h3>Facial</h3><ul><li>Microfocado 9D full face e papada</li><li>Toxina botulínica</li><li>Preenchimento labial</li><li>Remoção de preenchimento</li></ul></article>
+        <article class="t-card"><h3>Corporal</h3><ul><li>Criofrequência</li><li>Microfocado e macrofocado</li><li>Velaryan</li><li>Gordura localizada e flacidez</li></ul></article>
+        <article class="t-card"><h3>Emagrecimento</h3><ul><li>Protocolos exclusivos</li><li>Acompanhamento personalizado</li></ul></article>
+        <article class="t-card"><h3>Massagens</h3><ul><li>Sessões de 20 e 60 minutos</li><li>Protocolos detox de 80 minutos</li><li>Bamboo Turbo e Lipo Turbo</li><li>Pós-operatório</li></ul></article>
+      </div>
+      <p class="treat-note">A avaliação é gratuita. Os resultados variam de pessoa para pessoa.</p>
+    </div>
+  </section>
+
+  <section class="sec" id="resultados" aria-labelledby="res-title">
+    <div class="wrap sec-head">
+      <div>
+        <h2 id="res-title">Resultados e novidades</h2>
+        <p>Direto do <a href="https://www.instagram.com/befacenavegantes/" target="_blank" rel="noopener">@befacenavegantes</a>. Toque em uma publicação para ver em detalhe.</p>
+      </div>
+      <div class="reel-controls">
+        <button class="round" type="button" id="prev" aria-label="Publicação anterior"><svg><use href="#i-left"/></svg></button>
+        <button class="round" type="button" id="next" aria-label="Próxima publicação"><svg><use href="#i-right"/></svg></button>
+      </div>
+    </div>
+    <div class="reel" id="reel" role="region" aria-label="Publicações recentes" tabindex="0"></div>
+  </section>
+
+  <section class="sec visit" id="visite" aria-labelledby="visit-title">
+    <div class="wrap">
+      <div>
+        <h2 id="visit-title">Visite a clínica</h2>
+        <address>Av. Prefeito José Juvenal Mafra, 185<br>Centro, Navegantes – SC</address>
+        <table>
+          <tr><th scope="row">Segunda a sexta</th><td>8h às 20h</td></tr>
+          <tr><th scope="row">Sábado</th><td>9h às 13h</td></tr>
+        </table>
+        <div class="ctas">
+          <a class="btn btn-shell" data-book target="_blank" rel="noopener"><svg><use href="#i-cal"/></svg>Agendar avaliação gratuita</a>
+          <a class="btn btn-line" href="https://www.google.com/maps/search/?api=1&query=Avenida+Prefeito+Jos%C3%A9+Juvenal+Mafra+185+Navegantes+SC" target="_blank" rel="noopener">Abrir no Maps</a>
+        </div>
+      </div>
+      <div class="map">
+        <iframe title="Mapa da clínica be.face" loading="lazy" referrerpolicy="no-referrer-when-downgrade"
+          src="https://maps.google.com/maps?q=Avenida%20Prefeito%20Jos%C3%A9%20Juvenal%20Mafra%20185%2C%20Navegantes%20SC&z=16&output=embed"></iframe>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <a class="brand" href="#inicio"><img src="assets/profile.jpg" alt=""><span>be.face + be.laser<small>Clínica estética</small></span></a>
+    <p>Realce sua beleza, sinta sua essência.</p>
+    <a class="btn btn-line" href="https://www.instagram.com/befacenavegantes/" target="_blank" rel="noopener"><svg><use href="#i-ig"/></svg>@befacenavegantes</a>
+  </div>
+</footer>
+
+<a class="book-float" data-book target="_blank" rel="noopener"><svg><use href="#i-cal"/></svg>Agendar</a>
+
+<dialog id="dlg" aria-labelledby="dlg-title">
+  <button class="close" type="button" id="dlg-close" aria-label="Fechar"><svg><use href="#i-x"/></svg></button>
+  <div class="dlg">
+    <div class="dlg-embed" id="dlg-embed"></div>
+    <div class="dlg-side">
+      <h2 class="sr-only" id="dlg-title">Publicação</h2>
+      <p class="dlg-caption" id="dlg-caption"></p>
+      <div class="ctas">
+        <a class="btn btn-copper" data-book target="_blank" rel="noopener"><svg><use href="#i-cal"/></svg>Agendar avaliação</a>
+        <a class="btn btn-line" id="dlg-ig" target="_blank" rel="noopener"><svg><use href="#i-ig"/></svg>Ver no Instagram</a>
+      </div>
+    </div>
+  </div>
+</dialog>
+
+<script src="assets/posts.js"></script>
+<script>
+(() => {
+  // Where "Agendar" buttons lead. Swap for the clinic's WhatsApp (https://wa.me/55...) when available.
+  const BOOK_URL = "https://ig.me/m/befacenavegantes";
+  document.querySelectorAll("[data-book]").forEach(a => { a.href = BOOK_URL; });
+
+  // Hide the anniversary invite once the event day is over
+  const ev = document.getElementById("evento");
+  if (new Date() > new Date(ev.dataset.until + "T23:59:59")) ev.hidden = true;
+
+  const posts = [...window.POSTS].sort((a, b) => b.date.localeCompare(a.date));
+  const reduced = matchMedia("(prefers-reduced-motion: reduce)").matches;
+  const thisYear = new Date().getFullYear();
+  const fmtDate = d => {
+    const dt = new Date(d + "T12:00:00");
+    return dt.toLocaleDateString("pt-BR", dt.getFullYear() === thisYear ? { day: "numeric", month: "long" } : { month: "long", year: "numeric" });
+  };
+  const esc = s => s.replace(/[&<>"]/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]));
+  const clean = s => s.replace(/#\S+/g, "").replace(/^[\s✨🇧🇷]+/u, "").trim();
+  const title = p => clean(p.caption).split("\n")[0].trim();
+
+  const card = (p, i, clone) => `
+    <button class="card" type="button" data-i="${i}" ${clone ? 'aria-hidden="true" tabindex="-1"' : ""}>
+      <div class="card-media">
+        <img src="${p.img}" alt="${clone ? "" : esc(title(p))}" loading="lazy" draggable="false">
+        <span class="kind"><svg><use href="#i-${p.type === "video" ? "play" : "photo"}"/></svg>${p.type === "video" ? "Vídeo" : "Foto"}</span>
+      </div>
+      <div class="card-body">
+        <p>${esc(clean(p.caption))}</p>
+        <time datetime="${p.date}">${fmtDate(p.date)}</time>
+      </div>
+    </button>`;
+  const reel = document.getElementById("reel");
+  reel.innerHTML = posts.map((p, i) => card(p, i, false)).join("") + posts.map((p, i) => card(p, i, true)).join("");
+
+  // Auto-scroll: drifts continuously, pauses on hover/focus/touch/drag
+  let pos = 0, paused = reduced, hold = 0, half = 0;
+  const measure = () => { half = reel.scrollWidth / 2; };
+  measure(); addEventListener("resize", measure); addEventListener("load", measure);
+  const tick = () => {
+    if (!paused && Date.now() > hold) {
+      pos += 0.5;
+      if (pos >= half) pos -= half;
+      reel.scrollLeft = pos;
+    }
+    requestAnimationFrame(tick);
+  };
+  requestAnimationFrame(tick);
+  reel.addEventListener("scroll", () => {
+    if (paused || Date.now() <= hold) pos = reel.scrollLeft;
+    if (reel.scrollLeft >= half) { reel.scrollLeft -= half; pos = reel.scrollLeft; }
+  }, { passive: true });
+  reel.addEventListener("mouseenter", () => { if (!reduced) paused = true; });
+  reel.addEventListener("mouseleave", () => { if (!reduced) paused = false; });
+  reel.addEventListener("focusin", () => { paused = true; });
+  reel.addEventListener("focusout", () => { paused = reduced; });
+  reel.addEventListener("touchstart", () => { hold = Date.now() + 4000; }, { passive: true });
+
+  const step = dir => {
+    const w = reel.querySelector(".card").offsetWidth + 22;
+    hold = Date.now() + 5000;
+    if (dir < 0 && reel.scrollLeft < w) { reel.scrollLeft += half; }
+    reel.scrollBy({ left: dir * w, behavior: reduced ? "auto" : "smooth" });
+  };
+  document.getElementById("prev").onclick = () => step(-1);
+  document.getElementById("next").onclick = () => step(1);
+
+  let dragX = null, startLeft = 0, moved = false;
+  reel.addEventListener("pointerdown", e => {
+    if (e.pointerType !== "mouse") return;
+    dragX = e.clientX; startLeft = reel.scrollLeft; moved = false;
+  });
+  addEventListener("pointermove", e => {
+    if (dragX === null) return;
+    const dx = e.clientX - dragX;
+    if (Math.abs(dx) > 5) { moved = true; reel.classList.add("dragging"); }
+    if (moved) reel.scrollLeft = startLeft - dx;
+  });
+  addEventListener("pointerup", () => {
+    if (dragX === null) return;
+    dragX = null; hold = Date.now() + 1500;
+    setTimeout(() => reel.classList.remove("dragging"), 0);
+  });
+
+  const dlg = document.getElementById("dlg");
+  const open = p => {
+    document.getElementById("dlg-embed").innerHTML =
+      `<iframe src="https://www.instagram.com/p/${p.code}/embed/" title="Publicação no Instagram" loading="lazy" allowfullscreen></iframe>`;
+    document.getElementById("dlg-title").textContent = title(p);
+    document.getElementById("dlg-caption").textContent = clean(p.caption);
+    document.getElementById("dlg-ig").href = p.url;
+    paused = true;
+    dlg.showModal();
+  };
+  reel.addEventListener("click", e => {
+    const c = e.target.closest(".card");
+    if (c && !moved) open(posts[+c.dataset.i]);
+  });
+  document.getElementById("dlg-close").onclick = () => dlg.close();
+  dlg.addEventListener("click", e => { if (e.target === dlg) dlg.close(); });
+  dlg.addEventListener("close", () => {
+    document.getElementById("dlg-embed").innerHTML = "";
+    paused = reduced || reel.matches(":hover");
+  });
+})();
+</script>
+</body>
+</html>
